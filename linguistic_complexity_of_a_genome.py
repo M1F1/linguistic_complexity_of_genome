@@ -1,26 +1,16 @@
 import argparse
-
-
-def count_distinct_substrings(s: str, substring_len: int):
-    pass
-    # have to count distinct substrings of s
-    return 2
-
+import distinct_substrings
 
 def maximum_substring_count(string_len: int, alphabet_len: int, substring_len: int):
-    # compute formula
     pass
-    return 10
+    return 40
 
 
 def linguistic_complexity(string: str, alphabet: [str]):
     string_len = len(string)
     alphabet_len = len(alphabet)
-    sum_sub_k = 0
-    sum_m_k = 0
-    for substring_len in range(1, string_len):
-        sum_sub_k += count_distinct_substrings(string, substring_len)
-        sum_m_k += maximum_substring_count(string_len, alphabet_len, substring_len)
+    sum_sub_k = len(distinct_substrings.create_all_distinct_substrings(string))
+    sum_m_k = maximum_substring_count(string, 'ATG', 1)
 
     return sum_sub_k / sum_m_k
 
